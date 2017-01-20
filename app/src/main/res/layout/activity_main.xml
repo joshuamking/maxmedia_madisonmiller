@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		app:statusBarBackground="@android:color/transparent"
+		android:fitsSystemWindows="true"
+		tools:context="com.maxmedia.madisonmiller.screens.MainActivity">
+
+	<android.support.design.widget.AppBarLayout
+			android:layout_height="@dimen/app_bar_height"
+			android:layout_width="match_parent"
+			android:fitsSystemWindows="true"
+			android:theme="@style/AppTheme.AppBarOverlay">
+
+		<android.support.design.widget.CollapsingToolbarLayout
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				app:layout_scrollFlags="scroll|enterAlwaysCollapsed|snap">
+
+			<android.support.v7.widget.Toolbar
+					android:id="@+id/toolbar"
+					android:layout_height="?attr/actionBarSize"
+					android:layout_width="match_parent"
+					android:background="?attr/colorPrimary"
+					app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+			<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					app:layout_collapseMode="parallax"
+					android:alpha="0.1"
+					android:padding="10dp"
+					android:src="@drawable/madisonmiller"
+					android:tint="@android:color/white" />
+
+			<TextView
+					android:id="@+id/textView"
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent"
+					android:layout_gravity="center"
+					android:layout_marginBottom="24dp"
+					app:layout_collapseMode="pin"
+					android:gravity="center"
+					android:text="Welcome Katie"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+		</android.support.design.widget.CollapsingToolbarLayout>
+	</android.support.design.widget.AppBarLayout>
+
+	<ProgressBar
+			android:id="@+id/content_loading_spinner"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center"
+			android:alpha="0"
+			android:indeterminate="true"
+			android:indeterminateOnly="true" />
+
+	<android.support.v7.widget.RecyclerView
+			android:id="@+id/home_screen_rv"
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			app:layout_behavior="@string/appbar_scrolling_view_behavior"
+			android:clipChildren="false"
+			android:clipToPadding="false"
+			android:paddingBottom="72dp"
+			app:behavior_overlapTop="48dp" />
+
+	<android.support.design.widget.FloatingActionButton
+			android:id="@+id/fab"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="bottom|end"
+			android:layout_margin="@dimen/fab_margin"
+			android:tint="@android:color/white"
+			app:srcCompat="@drawable/ic_shopping_cart" />
+
+</android.support.design.widget.CoordinatorLayout>
